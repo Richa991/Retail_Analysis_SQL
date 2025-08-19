@@ -30,22 +30,22 @@
 - Corrected 10 price discrepancies (e.g., $9312 to $93.12) using `product_inventory`.
 - Replaced 13 null values in `customer_profiles` with "Unknown".
 - Standardized `TransactionDate` to DATE format.
-- Details: [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L12-L67)
+- Details: [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L12-L67)
 
 ## Exploratory Data Analysis
 - Identified ProductID 17 (Product_17, Beauty & Health) as top performer with 109 units and $9450 sales.
 - Noted CustomerID 664 with 14 transactions as a key buyer.
 - Highlighted "Electronics" category with $19,500 total sales.
-- Details: [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L69-L96)
+- Details: [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L69-L96)
 
 ## Data Analysis
-- Top 10 high-revenue products: ProductID 17 (Product_17, Beauty & Health) ($9450), ProductID 2 (Product_2, Home & Kitchen) ($6200). [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L98-L106)
-- Lowest performer: ProductID 1 (Product_1, Clothing) with 1 unit sold. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L108-L117)
-- Sales trend: Grew from $15,000 (January 2023) to $16,500 (February 2023), 10% growth. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L119-L142)
-- Customer insights: CustomerID 664 (14 transactions, $1500), CustomerID 100 (1 transaction, $50). [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L144-L166)
-- Repeat purchase: CustomerID 664 bought ProductID 17 (Product_17, Beauty & Health) twice. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L169-L176)
-- Loyalty metric: CustomerID 664 showed 180 days between purchases. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L178-L188)
-- Segmentation: 50 low, 30 medium, 20 high-value customers. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L190-L206)
+- Top 10 high-revenue products: ProductID 17 (Product_17, Beauty & Health) ($9450), ProductID 2 (Product_2, Home & Kitchen) ($6200). [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L98-L106)
+- Lowest performer: ProductID 1 (Product_1, Clothing) with 1 unit sold. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L108-L117)
+- Sales trend: Grew from $15,000 (January 2023) to $16,500 (February 2023), 10% growth. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L119-L142)
+- Customer insights: CustomerID 664 (14 transactions, $1500), CustomerID 100 (1 transaction, $50). [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L144-L166)
+- Repeat purchase: CustomerID 664 bought ProductID 17 (Product_17, Beauty & Health) twice. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L169-L176)
+- Loyalty metric: CustomerID 664 showed 180 days between purchases. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L178-L188)
+- Segmentation: 50 low, 30 medium, 20 high-value customers. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql#L190-L206)
 
 ## Results Finding
 - ProductID_17 (**_Beauty & Health_**) led with **109 units and $9450**, indicating **strong demand**.
@@ -72,4 +72,4 @@
 - Dependent on sample data accuracy.
 
 ## References
-- [MySQL documentation for query implementation.](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql)
+- [MySQL documentation for query implementation.](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Retail_Analytics_CaseStudy.sql)
