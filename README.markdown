@@ -48,23 +48,22 @@
 - Segmentation: 50 low, 30 medium, 20 high-value customers. [SQL Queries](https://github.com/Richa991/Retail_Analysis_SQL/blob/main/Rertail_Analytics_CaseStudy.sql#L190-L206)
 
 ## Results Finding
-- ProductID 17 (Product_17, Beauty & Health) led with 109 units and $9450, indicating strong demand.
-- "Electronics" category generated $19,500, a key revenue driver.
-- Top 10 products included ProductID 2 (Product_2, Home & Kitchen) at $6200, highlighting diverse high performers.
-- ProductID 1 (Product_1, Clothing) sold only 1 unit, signaling potential underperformance.
-- Sales increased by 10% from $15,000 to $16,500 between January and February 2023, showing growth potential.
-- CustomerID 664 spent $1500 over 14 transactions, a high-value customer to retain.
-- CustomerID 100 spent $50 once, representing a segment needing engagement.
-- CustomerID 664’s repeat purchase of ProductID 17 (Product_17, Beauty & Health) twice suggests brand loyalty.
-- CustomerID 664’s 180-day purchase span indicates long-term interest.
-- Customer segmentation revealed 50 low, 30 medium, and 20 high-value customers, offering targeted opportunities.
+- ProductID_17 (**_Beauty & Health_**) led with **109 units and $9450**, indicating **strong demand**.
+- "**_Electronics_**" category generated **$19,500**, a **key revenue driver**.
+- Top 10 products included ProductID_2 (**_Home & Kitchen_**) at **$6200**, highlighting **diverse high performers**.
+- ProductID_1 (**_Clothing_**) sold only 1 unit, signaling potential underperformance.
+- **Sales increased by 10%** from **$15,000 to $16,500** between January and February 2023, showing growth potential.
+- **CustomerID 664** spent $1500 over 14 transactions, a **high-value customer to retain**.
+- **CustomerID 100** spent $50 once, representing a **segment needing engagement**.
+- **CustomerID 664’s** repeat purchase of ProductID 17 (Beauty & Health) twice suggests **brand loyalty**.
+- **CustomerID 664’s** 180-day purchase span indicates **long-term interest**.
+- Customer segmentation revealed **50 low, 30 medium, and 20 high-value customers**, offering targeted opportunities.
 
 ## Recommendation
-- Focus inventory on top products (e.g., ProductID 17 (Product_17, Beauty & Health)) and "Electronics" category to capitalize on demand.
+- Focus inventory on top products "**_Beauty & Health_**" and "**_Electronics_**" category to **capitalize on demand**.
 - Target marketing at high-value customers (e.g., CustomerID 664) to maximize retention.
 - Develop retention strategies for loyal customers (e.g., CustomerID 664 with 180-day span).
-- Visualize trends (e.g., 10% growth) using Python or BI tools to support decision-making.
-- Address underperforming products (e.g., ProductID 1 (Product_1, Clothing)) with promotions or phase-out plans.
+- Address underperforming products (e.g., ProductID_1, Clothing)) with promotions or phase-out plans.
 - Engage low-activity customers (e.g., CustomerID 100) with tailored campaigns.
 
 ## Limitation
