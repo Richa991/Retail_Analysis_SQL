@@ -9,8 +9,8 @@ FROM sales_transaction
 where customerID = 1
 GROUP BY customerID;
 
-/* Q1 Write a query to identify the number of duplicates in "sales_transaction" table. Also, create a separate table containing the unique values 
-and remove the the original table from the databases and replace the name of the new table with the original name. */
+/* 1 Identifying the number of duplicates in "sales_transaction" table. Also, creating a separate table containing the unique values 
+and removing the the original table from the databases and replace the name of the new table with the original name. */
 SELECT TransactionID,
 COUNT(*)
 FROM sales_transaction
@@ -23,8 +23,8 @@ RENAME  TO sales_transaction;
 SELECT count(*)
 FROM sales_transaction;
 
-/* Q2 Write a query to identify the discrepancies in the price of the same product in "sales_transaction" and "product_inventory" tables.
-Also, update those discrepancies to match the price in both the tables. */
+/* 2 Identifying the discrepancies in the price of the same product in "sales_transaction" and "product_inventory" tables.
+Also, updating those discrepancies to match the price in both the tables. */
 
 SELECT S.TransactionID, 
 S.Price AS TransactionPrice,
@@ -37,7 +37,7 @@ SET Price = 93.12
 WHERE Price = 9312;
 SET SQL_SAFE_UPDATES = 0;
 
-/*Q3 Write a SQL query to identify the null values in the dataset and replace those by “Unknown”. */
+/*3 Identifying the null values in the dataset and replace those by “Unknown”. */
 
 select count(*)
 from customer_profiles
@@ -54,7 +54,7 @@ SET customerid = COALESCE(customerid, 'Unknown'),
     Location = IFNULL(Location, 'Unknown'),
     JoinDate = IFNULL(Joindate, 'Unknown');
     
-/* Q4.   Write a SQL query to clean the DATE column in the dataset. */ 
+/* 4. Cleaning the DATE column in the dataset. */ 
 
 Create TABLE sales_transaction_new AS
 SELECT *,
@@ -66,7 +66,7 @@ ALTER TABLE sales_transaction_new
 RENAME TO sales_transaction;
 SELECT * FROM sales_transaction;
 
-/* Q5. Write a SQL query to summarize the total sales and quantities sold per product by the company.
+/* 5. Summarizing the total sales and quantities sold per product by the company.
 (Here, the data has been already cleaned in the previous steps and from here we will be understanding the different types of data analysis from the given dataset.) */
 
 Select ProductID,
@@ -76,7 +76,7 @@ FROM sales_transaction
 GROUP BY ProductID
 ORDER BY SUM(QuantityPurchased * Price) DESC;
 
-/* Q6. Write a SQL query to count the number of transactions per customer to understand purchase frequency. */
+/* 6. Counting the number of transactions per customer to understand purchase frequency. */
 
 SELECT CustomerID,
 COUNT(*) AS NumberOfTransactions
@@ -84,7 +84,7 @@ FROM sales_transaction
 GROUP BY CustomerID
 ORDER BY COUNT(*) DESC;
 
-/*Q7. Write a SQL query to evaluate the performance of the product categories based on the total sales
+/* 7. Evaluating the performance of the product categories based on the total sales
  which help us understand the product categories which needs to be promoted in the marketing campaigns. */
  
  SELECT P.Category,
@@ -95,7 +95,7 @@ JOIN product_inventory P ON P.ProductID = S.ProductID
 GROUP BY P.Category
 ORDER BY SUM(S.QuantityPurchased * S.Price) DESC;
 
-/* Q8. Write a SQL query to find the top 10 products with the highest total sales revenue from the sales transactions.
+/* 8. Finding the top 10 products with the highest total sales revenue from the sales transactions.
  This will help the company to identify the High sales products which needs to be focused to increase the revenue of the company. */
 
 SELECT ProductID,
@@ -105,7 +105,7 @@ GROUP BY ProductID
 ORDER BY SUM(QuantityPurchased * Price) DESC
 LIMIT 10;
 
-/* Q9. Write a SQL query to find the ten products with the least amount of units sold from the sales transactions,
+/* 9. Finding the 10 products with the least amount of units sold from the sales transactions,
  provided that at least one unit was sold for those products. */
 
 Select ProductID,
@@ -116,7 +116,7 @@ having TotalUnitsSold >=1
 order by SUM(QuantityPurchased)
 limit 10;
 
-/* 10. Write a SQL query to identify the sales trend to understand the revenue pattern of the company. */
+/* 10. Identifying the sales trend to understand the revenue pattern of the company. */
 
 SELECT TransactionDate_updated AS DATETRANS,
 count(*) as Transaction_count,
@@ -126,7 +126,7 @@ FROM sales_transaction
 GROUP BY TransactionDate_updated 
 ORDER BY TransactionDate_updated DESC;
 
-/* 11. Write a SQL query to understand the month on month growth rate of sales of the company which will help understand the growth trend of the company. */
+/* 11. Understand the month on month growth rate of sales of the company which will help us understand the growth trend of the company. */
 
 WITH  temp AS (
 SELECT Month(TransactionDate) AS month,
@@ -141,7 +141,7 @@ GROUP BY Month(TransactionDate)
 	FROM temp
 	GROUP BY month;
 
-/* 12. Write a SQL query that describes the number of transaction along with the total amount spent by each customer which are on the higher side
+/* 12. To get the number of transaction along with the total amount spent by each customer which are on the higher side
  and will help us understand the customers who are the high frequency purchase customers in the company. */
  
  
@@ -154,7 +154,7 @@ HAVING NumberOfTransactions > 10 AND
 TotalSpent > 1000
 ORDER BY TotalSpent DESC;
 
-/* 13. Write a SQL query that describes the number of transaction along with the total amount spent by each customer,
+/* 13. To get the number of transaction along with the total amount spent by each customer,
  which will help us understand the customers who are occasional customers or have low purchase frequency in the company. */
  
  SELECT CustomerID,
@@ -166,7 +166,7 @@ HAVING NumberOfTransactions <= 2
 ORDER BY NumberOfTransactions, TotalSpent DESC ;
 
 
-/* 14. Write a SQL query that describes the total number of purchases made by each customer against each productID to understand the repeat customers in the company. */ 
+/* 14. To get the total number of purchases made by each customer against each productID to understand the repeat customers in the company. */ 
 
 SELECT CustomerID, ProductID,
 COUNT(QuantityPurchased) AS TimesPurchased
@@ -175,10 +175,10 @@ GROUP BY CustomerID, ProductID
 HAVING COUNT(QuantityPurchased) > 1
 ORDER BY COUNT(QuantityPurchased) DESC;
 
-/* 15. Write a SQL query that describes the duration between the first and the last purchase of the customer in that particular company
+/* 15. To get the duration between the first and the last purchase of the customer in that particular company
  to understand the loyalty of the customer. */ 
  
- SELECT CustomerID, 
+SELECT CustomerID, 
 MIN(TransactionDate_updated) AS FirstPurchase,
 MAX(TransactionDate_updated) AS LastPurchase,
 DATEDIFF(MAX(TransactionDate_updated), MIN(TransactionDate_updated)) AS DaysBetweenPurchases
@@ -187,8 +187,8 @@ GROUP BY CustomerID
 HAVING DaysBetweenPurchases > 0
 ORDER BY DATEDIFF(MAX(TransactionDate_updated), MIN(TransactionDate_updated)) DESC;
 
-/* 16. Write an SQL query that segments customers based on the total quantity of products they have purchased.
- Also, count the number of customers in each segment which will help us target a particular segment for marketing. */ 
+/* 16. Segmenting customers based on the total quantity of products they have purchased.
+ Also, counting the number of customers in each segment which will help us target a particular segment for marketing. */ 
  
  CREATE TABLE customer_segment AS SELECT C.CustomerID, 
     CASE
